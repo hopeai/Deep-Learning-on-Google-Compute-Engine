@@ -76,15 +76,12 @@ pip install -U nltk
 pip install pillow
 pip install h5py
 pip install kaggle-cli
-pip install -U scikit-learn
 pip install scikit-image
-
 pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
 pip install torchvision
 python -m pip install pymongo
 pip install tqdm
 pip install Click
-pip install -U nltk
 pip install --upgrade tensorflow-gpu
 # Install keras from source
 git clone https://github.com/fchollet/keras.git 
@@ -128,7 +125,6 @@ pip install -U nltk
 pip install pillow
 pip install h5py
 pip install kaggle-cli
-pip install -U scikit-learn
 pip install scikit-image
 
 pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
@@ -136,7 +132,6 @@ pip install torchvision
 python -m pip install pymongo
 pip install tqdm
 pip install Click
-pip install -U nltk
 pip install --upgrade tensorflow-gpu
 # Install keras from source
 git clone https://github.com/fchollet/keras.git 
@@ -144,14 +139,6 @@ cd keras
 python setup.py install
 cd ..
 rm -rf keras
-
-# Configure the Jupyter notebook 
-jupyter notebook --generate-config
-echo -e "\n# Configuring remote access to jupyter Notebook" >> ~/.jupyter/jupyter_notebook_config.py
-echo -e "c = get_config()" >> ~/.jupyter/jupyter_notebook_config.py
-echo -e "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
-echo -e "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py
-echo -e "c.NotebookApp.port = 7000" >> ~/.jupyter/jupyter_notebook_config.py
 
 
 # Download OpenCV source and install
@@ -171,6 +158,11 @@ sudo ldconfig
 cd ~/venv2/lib/python2.7/site-packages/
 ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
 deactivate
+
+# Clean Up
+cd ~ 
+rm *.zip
+rm cudnn*
 
 echo "********************************************************"
 echo "*****  End of Google Cloud Set-up Script  	  ********"
