@@ -25,7 +25,7 @@ export LC_ALL=en_US.UTF-8
 sudo locale-gen
 sudo dpkg-reconfigure locales
 
-# Update and Upgrade 
+# Update and Upgrade
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
@@ -70,21 +70,21 @@ unzip opencv_contrib.zip
 ###################################
 virtualenv -p python3 venv3                 # Create a virtual environment
 source ~/venv3/bin/activate                  # Activate the virtual environment
-pip install numpy scipy matplotlib ipython jupyter pandas sympy nose 
+pip install numpy scipy matplotlib ipython jupyter pandas sympy nose
 pip install -U scikit-learn
 pip install -U nltk
 pip install pillow
 pip install h5py
 pip install kaggle-cli
 pip install scikit-image
-pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
+pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl
 pip install torchvision
 python -m pip install pymongo
 pip install tqdm
 pip install Click
 pip install --upgrade tensorflow-gpu
 # Install keras from source
-git clone https://github.com/fchollet/keras.git 
+git clone https://github.com/fchollet/keras.git
 cd keras
 python setup.py install
 cd ..
@@ -112,14 +112,20 @@ deactivate
 
 rm -rf ~/opencv-3.3.0/build
 
+jupyter notebook --generate-config
+echo -e "c = get_config()" >> ~/.jupyter/jupyter_notebook_config.py
+echo -e "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
+echo -e "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py
+echo -e "c.NotebookApp.port = 7000" >> ~/.jupyter/jupyter_notebook_config.py
+
 cd ~
 
 ###################################
 ##		VENV for Python 2		 ##
 ###################################
-virtualenv -p python venv2                 
+virtualenv -p python venv2
 source ~/venv2/bin/activate                  # Activate the virtual environment
-pip install numpy scipy matplotlib ipython jupyter pandas sympy nose 
+pip install numpy scipy matplotlib ipython jupyter pandas sympy nose
 pip install -U scikit-learn
 pip install -U nltk
 pip install pillow
@@ -127,14 +133,14 @@ pip install h5py
 pip install kaggle-cli
 pip install scikit-image
 
-pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl 
+pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post3-cp35-cp35m-manylinux1_x86_64.whl
 pip install torchvision
 python -m pip install pymongo
 pip install tqdm
 pip install Click
 pip install --upgrade tensorflow-gpu
 # Install keras from source
-git clone https://github.com/fchollet/keras.git 
+git clone https://github.com/fchollet/keras.git
 cd keras
 python setup.py install
 cd ..
@@ -160,7 +166,7 @@ ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
 deactivate
 
 # Clean Up
-cd ~ 
+cd ~
 rm *.zip
 rm cudnn*
 
