@@ -89,7 +89,6 @@ python setup.py install
 cd ..
 rm -rf keras
 
-rm -rf ~/opencv-3.3.0/build
 
 jupyter notebook --generate-config
 echo -e "c = get_config()" >> ~/.jupyter/jupyter_notebook_config.py
@@ -136,12 +135,7 @@ cd ~
 rm *.zip
 rm cudnn*
 
-echo "********************************************************"
-echo "*****  End of Google Cloud Set-up Script  	  ********"
-echo "*****  If there is no errors following    	  ********"
-echo "*****  Python Learning libraries are installed. ********"
-echo "*****  OpenCV 3.3.0, Tensorflow, pytorch, Keras ********"
-echo "********************************************************"
+
 echo ""
 echo "You can check if everything were installed successfully."
 echo "1- First run 'source ~/venv2/bin/activate' for python 2.7 or 'source ~/venv3/bin/activate' for python 3.x"
